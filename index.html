@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all">
+    <title>QQTix</title>
+    <meta name="description" content="" />
+    <link href="../favicon.ico" rel="shortcut icon" />
+
+    <script type='text/javascript' src='https://cdn.firebase.com/v0/firebase.js'></script>
+    <script type="text/javascript">
+      var dataRef = new Firebase('https://qqtix.firebaseio.com/events');
+      dataRef.child('message1').set({user_id: 'wilma', text: 'Hello'});
+      dataRef.child('message2').set({user_id: 'fred', text: 'How are you?'});
+      dataRef.child('message3').set({user_id: 'wilma', text: 'I’m doing well, thank you!'});
+      dataRef.on('value', function(snapshot) {
+        console.log(snapshot);
+      });
+    </script>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>
